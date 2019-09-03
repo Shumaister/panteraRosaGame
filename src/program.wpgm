@@ -1,0 +1,13 @@
+import wollok.game.*
+import panther.*
+
+program inicio {
+
+	game.title("PanteraRosa")
+	game.height(6)
+	game.width(6)
+
+	game.addVisual(panther)
+	
+	game.start()
+}
