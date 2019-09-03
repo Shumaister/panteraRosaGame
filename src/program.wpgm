@@ -1,6 +1,7 @@
 import wollok.game.*
 import panther.*
 import wall.*
+import man.*
 
 program inicio {
 
@@ -8,9 +9,20 @@ program inicio {
 	game.height(6)
 	game.width(6)
 
+	game.addVisual(man)
 	game.addVisual(panther)
-	
 	game.addVisual(wall)
+	
+	keyboard.up().onPressDo { panther.move(panther.position().up(1)) }
+	keyboard.down().onPressDo { panther.move(panther.position().down(1)) }
+	keyboard.left().onPressDo { panther.move(panther.position().left(1)) }
+	keyboard.right().onPressDo { panther.move(panther.position().right(1)) }
+	
+	game.whenCollideDo(panther, { elemento => 
+		panther.cambiarColor(elemento.darPintura())
+	})
+	
+	keyboard.space().onPressDo { panther.pintar() }
 	
 	game.start()
 }
