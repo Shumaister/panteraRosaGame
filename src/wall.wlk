@@ -14,4 +14,6 @@ object wall {
 	
 	method position() = position	
 		
+
+	method darPintura() = rosa		
 }

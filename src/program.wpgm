@@ -21,7 +21,7 @@ program inicio {
 	game.whenCollideDo(panther, { elemento => 
 		panther.cambiarColor(elemento.darPintura())
 	})
-	
+
 	keyboard.space().onPressDo { panther.pintar() }
 	
 	game.start()
