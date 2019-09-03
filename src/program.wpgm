@@ -1,5 +1,6 @@
 import wollok.game.*
 import panther.*
+import wall.*
 
 program inicio {
 
@@ -8,6 +9,8 @@ program inicio {
 	game.width(6)
 
 	game.addVisual(panther)
+	
+	game.addVisual(wall)
 	
 	game.start()
 }
